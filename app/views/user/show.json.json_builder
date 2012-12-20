@@ -1,0 +1,8 @@
+lists @lists do |l|
+  name: l.name  
+  tasks l.tasks do |t|
+    title t.title
+    note t.note
+    order t.order
+    date t.date
+  end

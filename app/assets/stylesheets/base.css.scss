@@ -1,0 +1,33 @@
+@import 'variables';
+
+body {
+  background-color: $light;
+  font: 14px/1em $bodyCopy;
+}
+
+a:link, 
+a:visited {
+  color: $accent;
+  text-decoration: none;
+}
+
+a:hover, 
+a:active {
+  color: $highlight;
+}
+
+p {
+  margin: 10px 0;
+  text-shadow: 0 1px 0 #FFF;
+}
+
+.site-container {
+  width: $contentWidth;
+  margin: 0 auto;
+}
+
+.site-toolbar {
+  @include cross-gradient($base, 5%);
+  padding: 10px 0;
+  border-bottom: solid 1px white;
+}

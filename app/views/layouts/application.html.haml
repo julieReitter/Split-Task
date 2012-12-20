@@ -1,0 +1,22 @@
+%html
+  %head
+    %title "SplitTask"
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    %header
+      %nav.full.cleaner.site-toolbar
+        %ul.site-container.horizontal-list
+          %li
+            %a{:href => "#", :class => "nav-icon user"} User
+          %li
+            %a{:href => "#", :class => "nav-icon list"} Lists
+          %li
+            %a{:href => "#", :class => "nav-icon settings"} Settings
+
+    %section.site-container#content
+      = yield
+
+    %p.notice= notice
+    %p.alert= alert

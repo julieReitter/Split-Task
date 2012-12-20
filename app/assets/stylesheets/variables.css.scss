@@ -1,0 +1,51 @@
+// COLORS
+$base: #4A4A4A;
+$light: #efefef;
+$accent: #A3CD39;
+$highlight: #F43E71;
+$lowlight: #555;
+
+// VAIRABLES
+$headline: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+$bodyCopy: Arial, sans-serif;
+
+// CONTENT WIDTH
+$contentWidth: 500px;
+$pixelGutter: 10px;
+
+
+//------------------------------
+// MIXINS
+//------------------------------
+
+@mixin cross-gradient($color, $strength: 15%){
+  background: $color; /* Old browsers */
+  background: -moz-linear-gradient(top,  lighten($color, $strength) 0%, darken($color, $strength) 100%); /* FF3.6+ */
+  background: -webkit-linear-gradient(top,  lighten($color, $strength) 0%, darken($color, $strength) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  lighten($color, $strength) 0%, darken($color, $strength) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  lighten($color, $strength) 0%, darken($color, $strength) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  lighten($color, $strength) 0%, darken($color, $strength) 100%); /* W3C */
+}
+
+@mixin cross-shadow($top, $left, $blur, $color, $inset:"") {
+  -moz-box-shadow:$top $left $blur $color #{$inset};
+  -webkit-box-shadow:$top $left $blur $color #{$inset};
+  box-shadow:$top $left $blur $color #{$inset};
+}
+
+@mixin cross-border-radius($val) {
+  -moz-border-radius: $val;
+  -webkit-border-radius: $val;
+  border-radius: $val;
+}
+
+@mixin button-base {
+  @include cross-gradient($accent);
+  @include cross-shadow(0, 1px, 0, lighten($accent, 25%), 'inset');
+  @include cross-border-radius(5px);
+  padding: 5px 10px;
+  color: $lowlight;
+  font-weight: bold;
+  text-shadow: 0 1px 0 lighten($accent, 15%);
+  border: solid 1px darken($accent, 25%);
+}

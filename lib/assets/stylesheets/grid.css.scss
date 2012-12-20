@@ -1,0 +1,117 @@
+
+// Grid System and Styles for Layout
+$baseWidth: 100%;
+$gutter: 1%;
+
+@mixin cross-border-box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin grid($width) {
+  width: $width - $gutter;
+  margin-left: $gutter / 2;
+  margin-right: $gutter / 2;
+  @include cross-border-box;
+}
+
+@mixin left-grid($width) {
+  width: $width - $gutter;
+  margin-left: $gutter;
+  @include cross-border-box;
+}
+
+@mixin right-grid($width) {
+  width: $width - $gutter;
+  margin-right: $gutter;
+  @include cross-border-box;
+}
+
+
+// Base Grids
+.full   { width: $baseWidth; }
+.half   { width: $baseWidth / 2; }
+.third  { width: $baseWidth / 3; }
+.quarter{ width: $baseWidth / 4; }
+.fifth  { width: $baseWidth / 5; }
+.sixth  { width: $baseWidth / 6; }
+.two-thirds     { width: $baseWidth * (2/3); }
+.three-quarters { width: $baseWidth * (3/4); }
+.four-fifths    { width: $baseWidth * (4/5); }
+.three-fifths   { width: $baseWidth * (3/5); }
+
+// Base Grids With Gutter
+.full-grid    { @include grid($baseWidth); }
+.half-grid    { @include grid($baseWidth / 2); }
+.third-grid   { @include grid($baseWidth / 3); }
+.quarter-grid { @include grid($baseWidth / 4); }
+.fifth-grid   { @include grid($baseWidth / 5); }
+.sixth-grid   { @include grid($baseWidth / 6); }
+.two-thirds-grid      { @include grid($baseWidth * (2/3)); }
+.three-quarters-grid  { @include grid($baseWidth * (3/4)); }
+.four-fifths-grid     { @include grid($baseWidth * (4/5)); }
+.three-fifths-grid    { @include grid($baseWidth * (3/5)); }
+
+// Left Gutters
+.lgutter {
+  margin-left: $gutter;
+}
+.full-lgrid    { @include left-grid($baseWidth); }
+.half-lgrid    { @include left-grid($baseWidth / 2); }
+.third-lgrid   { @include left-grid($baseWidth / 3); }
+.quarter-lgrid { @include left-grid($baseWidth / 4); }
+.fifth-lgrid   { @include left-grid($baseWidth / 5); }
+.sixth-lgrid   { @include left-grid($baseWidth / 6); }
+.two-thirds-lgrid      { @include left-grid($baseWidth * (2/3)); }
+.three-quarters-lgrid  { @include left-grid($baseWidth * (3/4)); }
+.four-fifths-lgrid     { @include left-grid($baseWidth * (4/5)); }
+.three-fifths-lgrid    { @include left-grid($baseWidth * (3/5)); }
+
+
+// Right Gutters
+.rgutter {
+  margin-right: $gutter;
+}
+.full-rgrid    { @include right-grid($baseWidth); }
+.half-rgrid    { @include right-grid($baseWidth / 2); }
+.third-rgrid   { @include right-grid($baseWidth / 3); }
+.quarter-rgrid { @include right-grid($baseWidth / 4); }
+.fifth-rgrid   { @include right-grid($baseWidth / 5); }
+.sixth-rgrid   { @include right-grid($baseWidth / 6); }
+.two-thirds-rgrid      { @include right-grid($baseWidth * (2/3)); }
+.three-quarters-rgrid  { @include right-grid($baseWidth * (3/4)); }
+.four-fifths-rgrid     { @include right-grid($baseWidth * (4/5)); }
+.three-fifths-rgrid    { @include right-grid($baseWidth * (3/5)); }
+
+.col {
+  float: left;
+}
+
+.col-right {
+  float: right;
+}
+
+.row-grid {
+  margin-bottom: $gutter;
+
+  div:first-child,
+  li:first-child {
+    margin-left: 0;
+  }
+
+  div:last-child,
+  li:last-child {
+    margin-right: 0;
+  }
+}
+
+.align-left {
+  float: left;
+  margin-left: 0;
+}
+
+.align-right {
+  float: right;
+  margin-right: 0 ;
+}
